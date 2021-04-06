@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 # getting name of player 1
 puts 'What is the name of Player 1?'
 player1_name = gets.chomp.capitalize
@@ -71,5 +72,4 @@ until game_over
   game_over = true if board.none?(Integer)
 
 end
-
 puts 'This game is a tie'
