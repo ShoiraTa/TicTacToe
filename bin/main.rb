@@ -29,7 +29,7 @@ end
 puts display_board(board)
 
 def user_input_is_valid?(user_input)
-  true if user_input.between?(0, 9)
+  true if user_input.between?(0, 9) && !user_input.nil?
 end
 
 def user_input_to_i(user_input)
@@ -54,7 +54,7 @@ until game_over
   board[user_input] = 'X'
   p display_board(board)
 
-  puts "#{player2_name} it is your turn now, select your \"\" position"
+  puts "#{player2_name} it is your turn now, select your \"O\" position"
   user_input = gets.chomp
   user_input = user_input_to_i(user_input)
 
