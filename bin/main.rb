@@ -1,20 +1,32 @@
 #!/usr/bin/env ruby
 
-# getting name of player 1
+
+def name_valid?(name)
+  true if name.length>=3 && !name.nil?
+end
+
 puts 'What is the name of Player 1?'
 player1_name = gets.chomp.capitalize
-puts
+until name_valid?(player1_name)
+puts "Please enter a valid name, it should have at least 3 characters"
+player1_name = gets.chomp.capitalize
+end
 puts "Hello #{player1_name}, your symbol  is \"x\""
-# getting name of player 2
-puts
 puts 'What is the name of player 2?'
 player2_name = gets.chomp.capitalize
-puts
+until name_valid?(player2_name)
+puts "Please enter a valid name, it should have at least 3 characters"
+player1_name = gets.chomp.capitalize
+end
 puts "#{player2_name} your symbol  is \"o\""
-puts
 puts "#{player1_name} and #{player2_name}  get ready to play TicTac Game.."
-puts
-puts
+
+
+
+
+
+
+
 
 board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 def display_board(board)
@@ -39,6 +51,7 @@ end
 
 game_over = false
 
+
 until game_over
 
   puts "#{player1_name} it is your turn now, select your \"X\" position"
@@ -55,10 +68,12 @@ until game_over
   board[user_input] = 'X'
   p display_board(board)
 
+  break if board.none?(Integer)
+
   puts "#{player2_name} it is your turn now, select your \"O\" position"
   user_input = gets.chomp
   user_input = user_input_to_i(user_input)
-
+    
   until user_input_is_valid?(user_input) == true
     puts 'Enter an available board number'
     user_input = gets.chomp
@@ -72,4 +87,17 @@ until game_over
   game_over = true if board.none?(Integer)
 
 end
+
+
+def winner (board, player1_name, player2_name)
+case 
+when board.count("X")> board.count("O")
+puts "#{player1_name} won the game" 
+when board.count("X")< board.count("O")
+puts "#{player2_name} won the game" 
+else
 puts 'This game is a tie'
+end
+end
+
+winner(board, player1_name, player2_name)
