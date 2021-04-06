@@ -15,7 +15,7 @@ puts 'What is the name of player 2?'
 player2_name = gets.chomp.capitalize
 until name_valid?(player2_name)
   puts 'Please enter a valid name, it should have at least 3 characters'
-  player1_name = gets.chomp.capitalize
+  player2_name = gets.chomp.capitalize
 end
 puts "#{player2_name} your symbol  is \"o\""
 puts "#{player1_name} and #{player2_name}  get ready to play TicTac Game.."
