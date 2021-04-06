@@ -81,9 +81,9 @@ end
 
 def winner(board, player1_name, player2_name)
   if board.count('X') > board.count('O')
-    puts "#{player1_name} won the game"
+    puts "#{player1_name}, you WIN the game"
   elsif board.count('X') < board.count('O')
-    puts "#{player2_name} won the game"
+    puts "#{player2_name}, you WIN the game"
   else
     puts 'This game is a tie'
   end
