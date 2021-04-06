@@ -42,7 +42,7 @@ game_over = false
 
 until game_over
 
-puts "#{player1_name} goes first, select your \"x\" position"
+puts "#{player1_name} it is your turn now, select your \"X\" position"
 user_input = gets.chomp
 user_input= user_input_to_i(user_input)
 
@@ -54,11 +54,24 @@ until user_input_is_valid?(user_input) ==true
  end
 
 board[user_input] = "X"
-p display_board
-game_over = true
+p display_board(board)
+
+puts "#{player2_name} it is your turn now, select your \"\" position"
+user_input = gets.chomp
+user_input= user_input_to_i(user_input)
+
+until user_input_is_valid?(user_input) ==true
+ puts 'Enter an available board number'
+ user_input =gets.chomp
+ user_input= user_input_to_i(user_input)
+ puts user_input_is_valid?(user_input)
+ end
 
 
+board[user_input] = "O"
+display_board(board)
 
+game_over = true  if board.none?(Integer)
 
 end
 
