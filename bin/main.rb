@@ -1,1 +1,1 @@
-puts 'Hell world'
+#!/usr/bin/env ruby
