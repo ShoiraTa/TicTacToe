@@ -1,1 +1,1 @@
-puts "Hell world"
+puts 'Hell world'
