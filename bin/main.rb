@@ -26,3 +26,41 @@ def display_board (board)
   puts "| #{board[6]} | #{board[7]} | #{board[8]} |"
    puts '-------------'
 end
+
+puts display_board(board)
+
+def user_input_is_valid?(user_input)
+true if user_input.between?(0,9) 
+
+end
+
+def user_input_to_i(user_input)
+user_input.to_i-1
+end
+
+game_over = false
+
+until game_over
+
+puts "#{player1_name} goes first, select your \"x\" position"
+user_input = gets.chomp
+user_input= user_input_to_i(user_input)
+
+until user_input_is_valid?(user_input) ==true
+ puts 'Enter an available board number'
+ user_input =gets.chomp
+ user_input= user_input_to_i(user_input)
+ puts user_input_is_valid?(user_input)
+ end
+
+board[user_input] = "X"
+p display_board
+game_over = true
+
+
+
+
+end
+
+
+
