@@ -37,7 +37,6 @@ until @player2.name_valid?(@player2_name)
 end
 puts "#{@player2_name} your symbol  is \"O\""
 puts "#{@player1_name} and #{@player2_name}  get ready to play TicTac Game.."
-
 end
 
 
@@ -49,61 +48,36 @@ end
 def current_player(board)
 count = board.count("X") + board.count("O")
 count%2 ==0?  @player1_name : @player2_name 
-
 end
 
 def current_symbol(current_player)
 current_player == @player1_name ? "X" : "O"
-
 end
-
-@win_combination= [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [2, 4, 6],
-      [0, 4, 8]
-     ]
-
- def win?(board)
-    @win_combination.any? do |combination|
-      combination.all? { |idx| board[idx] == 'X' } || combination.all? { |idx| board[idx] == 'O' }
-    end
-  end
 
 the_board = Board.new
 game_over =false
 
 welcome
-arr1 =[]
-arr2 =[]
 until game_over
-
 display_board(board)
-
-puts " #{current_player(board)} it is your turn now, select your #{current_symbol(current_player(board))} position"
+current_player = current_player(board)
+puts " #{current_player} it is your turn now, select your #{current_symbol(current_player(board))} position"
 player_move = gets.chomp
 player_move = user_input_to_i(player_move)
-
 if @player1.player_input_valid?(player_move) && the_board.position_valid?(board, player_move)
-board[player_move] = current_symbol(current_player(board))
+board[player_move] = current_symbol(current_player)
 end
 
-current_player(board) == @player1_name? arr1 << player_move : arr2<< player_move
-
-
-p arr1
-p arr2
-p board
-puts
-puts
-
-game_over = true if board.none?(Integer) || win?(board)
+if the_board.win?(board) 
+puts display_board(board)
+puts "We have a winner! #{current_player} WON the game!!!!"
 end
 
+puts "It was a tied game, friendship WINS!!!" if board.none?(Integer)
+
+game_over = true if board.none?(Integer) || the_board.win?(board)
+
+end
 
 
 
