@@ -1,15 +1,36 @@
+include Enumerable
 class Board
-# attr_accessor :arr
-#      def initialize(arr)
-#           @arr = arr
-#      end
-def display_board(board)
-  puts '-------------'
-  puts "| #{board[0]} | #{board[1]} | #{board[2]} |"
-  puts '-------------'
-  puts "| #{board[3]} | #{board[4]} | #{board[5]} |"
-  puts '-------------'
-  puts "| #{board[6]} | #{board[7]} | #{board[8]} |"
-  puts '-------------'
+attr_accessor :win_combination
+    def initialize()
+@win_combination= [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [2, 4, 6],
+      [0, 4, 8]
+     ]
 end
+ def win?(board)
+    @win_combination.any? do |combination|
+      combination.all? { |idx| board[idx] == 'X' } || combination.all? { |idx| board[idx] == 'O' }
+    end
+  end
+
+
+
+def position_valid?(board, index)
+if board[index] == "X" || board[index] == "O"
+     puts 
+puts 'This position is taken, choose another position'
+puts
+return false
+else 
+return true
+end
+end
+
+
 end
