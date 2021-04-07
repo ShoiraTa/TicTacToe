@@ -22,10 +22,6 @@ class Board
   end
 
   def position_valid?(board, index)
-    if board[index] == 'X' || board[index] == 'O'
-      false
-    else
-      true
-    end
+    !(board[index] == 'X' || board[index] == 'O')
   end
 end

@@ -5,7 +5,5 @@ class Player
 
   def player_input_valid?(player_input)
     true if player_input.between?(0, 9) && !player_input.nil?
-      
-
   end
 end
