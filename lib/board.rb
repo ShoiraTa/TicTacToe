@@ -23,9 +23,6 @@ class Board
 
   def position_valid?(board, index)
     if board[index] == 'X' || board[index] == 'O'
-      puts
-      puts 'This position is taken, choose another position'
-      puts
       false
     else
       true

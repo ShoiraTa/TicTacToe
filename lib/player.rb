@@ -4,13 +4,8 @@ class Player
   end
 
   def player_input_valid?(player_input)
-    if player_input.between?(0, 9) && !player_input.nil?
-      true
-    else
+    true if player_input.between?(0, 9) && !player_input.nil?
+      
 
-      p 'input a valid number'
-      false
-
-    end
   end
 end
