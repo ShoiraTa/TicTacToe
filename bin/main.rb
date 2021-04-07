@@ -62,7 +62,7 @@ until game_over
   if @player1.player_input_valid?(player_move) && the_board.position_valid?(board, player_move)
     board[player_move] = current_symbol(current_player)
   else
-    p "#{player_move} is not valid, please input a valid position"
+    p 'Sorry, that is an invalid move kindly choose moves from 1-9'
   end
 
   if the_board.win?(board)
