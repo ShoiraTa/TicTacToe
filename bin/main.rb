@@ -61,6 +61,8 @@ until game_over
   player_move = user_input_to_i(player_move)
   if @player1.player_input_valid?(player_move) && the_board.position_valid?(board, player_move)
     board[player_move] = current_symbol(current_player)
+  else
+      p "#{player_move} is not valid, please input a valid position"
   end
 
   if the_board.win?(board)
