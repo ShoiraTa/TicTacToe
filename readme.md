@@ -1,7 +1,7 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# RUBY PROJECT 3: TIC TAC TOE
+# Tic Tac Toe CLI in Ruby!
 This is a Tic Tac Toe game built on Ruby. The main goal of this project is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes. 
 
 ## Definition of tic-tac-toe (Merriam Webster)
