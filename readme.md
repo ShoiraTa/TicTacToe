@@ -29,14 +29,15 @@ This is a Tic Tac Toe game built on Ruby. The main goal of this project is to pu
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 Clone repository from github to your local drive by following these steps:
-- Go to the main page of the repository
-- Above the listed files, click the green Code button
-- You can clone the repository using:
-  - SSH: `https://github.com/ShoiraTa/TicTacToe.git`.
 - Open Terminal
 - Change the current working directory to the location you want the cloned directory
-- Type one of the git clone commands listed above.
-- Press Enter to create your local clone
+- You can clone the repository writing in terminal:
+  - `git clone https://github.com/ShoiraTa/TicTacToe.git`.
+  - Press Enter to create your local clone
+- Make sure you have ruby installed locally run `ruby -v`**
+- Run `cd` TicTacToe in the terminal**
+- Go to bin folder `cd bin` 
+- To start the game type ```ruby main.rb``` in the terminal**
 
 ### Prerequisites
 - Text editor
