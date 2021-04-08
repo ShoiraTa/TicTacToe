@@ -1,11 +1,20 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# RUBY PROJECT 3: TIC TAC TOE
+# Tic Tac Toe CLI in Ruby!
 This is a Tic Tac Toe game built on Ruby. The main goal of this project is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes. 
 
+## Definition of tic-tac-toe (Merriam Webster)
+: a game in which two players alternately put Xs and Os in compartments of a figure formed by two vertical lines crossing two horizontal lines and each tries to get a row of three Xs or three Os before the opponent does
 
-## TIC TAC TOE GAME INSTRUCTIONS
+## Built With
+
+- Ruby
+
+![Game demo](game_demo.png)
+
+
+## GAME INSTRUCTIONS
 
 * Tic Tac Toe is board game played on a board with a 3 squared by 3 squared grid.
 * The players are assigned their own symbols to place on the board cells
@@ -17,6 +26,24 @@ This is a Tic Tac Toe game built on Ruby. The main goal of this project is to pu
 * The  First Player to get 3 of her symbols in a row (up, down, across, or diagonally) wins the game.
 * When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
+## Getting Started
+To get a local copy up and running follow these simple example steps.
+Clone repository from github to your local drive by following these steps:
+- Open Terminal
+- Change the current working directory to the location you want the cloned directory
+- You can clone the repository writing in terminal:
+  - `git clone https://github.com/ShoiraTa/TicTacToe.git`.
+  - Press Enter to create your local clone
+- Make sure you have ruby installed locally run `ruby -v`**
+- Run `cd` TicTacToe in the terminal**
+- Go to bin folder `cd bin` 
+- To start the game type ```ruby main.rb``` in the terminal**
+
+### Prerequisites
+- Text editor
+- GitHub
+- Git
+- Ruby
 
 ## Authors
 
@@ -26,3 +53,13 @@ This is a Tic Tac Toe game built on Ruby. The main goal of this project is to pu
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/shoira-tashpulatova-bab4a7122/)
 
 ![Shoira's GitHub stats](https://github-readme-stats.vercel.app/api?username=shoirata&count_private=true&theme=dark&show_icons=true)
+
+
+## Acknowledgments
+
+- Microverse
+- The Odin Project
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
