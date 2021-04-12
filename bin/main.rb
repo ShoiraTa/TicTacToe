@@ -15,7 +15,7 @@ end
 
 puts 'Welcome to TicTacToe game'
 puts 'Welcome player 1'
-@player1 = Player.new
+@playe    r1 = Player.new
 puts 'What is the name of Player 1?'
 @player1_name = gets.chomp.capitalize
 until @player1.name_valid?(@player1_name)
