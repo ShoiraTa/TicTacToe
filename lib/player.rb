@@ -4,14 +4,19 @@ class Player
   end
 
   def name_valid?(name)
-    true if !name.nil? && name.length >= 3 
+    !name.nil? && name.length >= 3? true : false
+ 
   end
 
   def player_input_valid?(player_input)
-    true if !player_input.nil? && player_input.between?(0, 9)
+  if !player_input.nil? && player_input.between?(0, 9) 
+    return true
+  else
+    return false
+  end
   end
 
-def current_player(current_player,player1_name, player2_name )
+def current_player(current_player, player1_name, player2_name )
 current_player == player1_name ?  player2_name : player1_name
  end
 
