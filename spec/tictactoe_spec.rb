@@ -12,6 +12,21 @@ describe "string to integer" do
 end
 end
 describe "validates user name input"
-     it"returns true if the user name"
+     it"returns true if the user name meets the condition" do
+          expect(@player.name_valid?('Sam')).to eq true
+     end
+
+     describe'when nill is entered' do
+      it 'should return false ' do
+          player_new = Player.new
+       expect(player_new.name_valid?('')).to be_a(false)
+      end
+     end
+     describe 'when less than 3 letters are entered' do
+          it 'should return false ' do
+               player_new = Player.new
+           expect(player_new.name_valid?('A')).to be_a(false)
+          end
+         end
 
 end
