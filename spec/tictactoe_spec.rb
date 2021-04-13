@@ -47,15 +47,15 @@ describe Player do
                expect(@player.player_input_valid?(11)).to eq(false)
           end
      end
- describe 'Player change' do
-     describe "when current player name is equal to player one name" do
-        it 'should return player two name' do
-          current_player = "Sam"
-          player1_name ="Sam"
-          player2_name = "Kim"
-          expect(@player.current_player(current_player, player1_name, player2_name)).to eq player2_name
+     describe 'Player change' do
+          describe "when current player name is equal to player one name" do
+          it 'should return player two name' do
+               current_player = "Sam"
+               player1_name ="Sam"
+               player2_name = "Kim"
+               expect(@player.current_player(current_player, player1_name, player2_name)).to eq player2_name
 
-        end
+          end
      end
 
      describe "when current player name is equal to player two name" do
@@ -66,30 +66,75 @@ describe Player do
             expect(@player.current_player(current_player, player1_name, player2_name)).to eq player1_name
   
           end
-       end
-     
- end
+          end
+          
+          end
 
  describe 'Symbol change' do
-    describe 'when current player is player one' do
-      it "should return 'X' as the symbol" do
-        current_player = "Kim"
-        player1_name ="Kim"
-    expect(@player.current_symbol(current_player,player1_name)).to eq('X')
-end
-end
+     describe 'when current player is player one' do
+          it "should return 'X' as the symbol" do
+          current_player = "Kim"
+          player1_name ="Kim"
+      expect(@player.current_symbol(current_player,player1_name)).to eq('X')
+     end
+     end
 
-describe 'when current player is player two' do
+     describe 'when current player is player two' do
      it "should return 'O' as the symbol" do
      current_player = "Kim"
      player1_name ="Rome"
      expect(@player.current_symbol(current_player,player1_name)).to eq('O')
      end
      end
-     
-
-
- end
-
-    
+end
+   
+end
+describe Board do
+     before do
+          @board = Board.new
+     end 
+     describe "position_valid?" do
+          describe " when position on the board is not taken" do
+          it "returns true if the index position on the board is not taken with X or O" do
+          expect(@board.position_valid?([1,2,3], 0)).to eq true
+          end
+          end
+          describe " when position on the board is  taken" do
+          it "returns false if the index position on the board is taken with X or O" do
+          expect(@board.position_valid?(["X",2,3], 0)).to eq false
+          end
+          end
+     end
+     describe"Win?" do
+          describe"when win combination" do
+          it "returns true if any win combination is there" do
+           win_combination = [
+                              [0, 1, 2],
+                              [3, 4, 5],
+                              [6, 7, 8],
+                              [0, 3, 6],
+                              [1, 4, 7],
+                              [2, 5, 8],
+                              [2, 4, 6],
+                              [0, 4, 8]
+                              ]
+           expect(@board.win?(["X", "X", "X", 4, 5, 6, 7, 8, 9])).to eq true
+          end
+     end
+          describe"when win combination is false" do
+          it "returns false if  there is no any win combination" do
+           win_combination = [
+                              [0, 1, 2],
+                              [3, 4, 5],
+                              [6, 7, 8],
+                              [0, 3, 6],
+                              [1, 4, 7],
+                              [2, 5, 8],
+                              [2, 4, 6],
+                              [0, 4, 8]
+                              ]
+           expect(@board.win?([1,2,3, 4, 5, 6, 7, 8, 9])).to eq false
+          end
+     end
+     end
 end
