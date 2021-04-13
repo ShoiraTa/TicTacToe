@@ -43,15 +43,16 @@ game_over = false
 
 until game_over
   display_board(board)
-  @current_player =  @player1.current_player(@current_player,@player1_name, @player2_name )
+  @current_player = @player1.current_player(@current_player, @player1_name, @player2_name)
 
-  puts " #{@current_player} it is your turn now, select your #{@player1.current_symbol(@current_player, @player1_name)} position"
+  puts " #{@current_player} it is your turn now, select your #{@player1.current_symbol(@current_player,
+                                                                                       @player1_name)} position"
   player_move = gets.chomp
   player_move = @player1.user_input_to_i(player_move)
   if @player1.player_input_valid?(player_move) && the_board.position_valid?(board, player_move)
-      board[player_move] = @player1.current_symbol(@current_player, @player1_name)
-    else
-      p 'Sorry, that is an invalid move kindly choose moves from 1-9'
+    board[player_move] = @player1.current_symbol(@current_player, @player1_name)
+  else
+    p 'Sorry, that is an invalid move kindly choose moves from 1-9'
   end
 
   if the_board.win?(board)
