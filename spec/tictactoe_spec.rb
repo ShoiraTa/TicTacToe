@@ -47,7 +47,49 @@ describe Player do
                expect(@player.player_input_valid?(11)).to eq(false)
           end
      end
+ describe 'Player change' do
+     describe "when current player name is equal to player one name" do
+        it 'should return player two name' do
+          current_player = "Sam"
+          player1_name ="Sam"
+          player2_name = "Kim"
+          expect(@player.current_player(current_player, player1_name, player2_name)).to eq player2_name
 
+        end
+     end
+
+     describe "when current player name is equal to player two name" do
+          it 'should return player one name' do
+            current_player = "Kim"
+            player1_name ="Sam"
+            player2_name = "Kim"
+            expect(@player.current_player(current_player, player1_name, player2_name)).to eq player1_name
+  
+          end
+       end
+     
+ end
+
+ describe 'Symbol change' do
+    describe 'when current player is player one' do
+      it "should return 'X' as the symbol" do
+        current_player = "Kim"
+        player1_name ="Kim"
+    expect(@player.current_symbol(current_player,player1_name)).to eq('X')
+end
+end
+
+describe 'when current player is player two' do
+     it "should return 'O' as the symbol" do
+     current_player = "Kim"
+     player1_name ="Rome"
+     expect(@player.current_symbol(current_player,player1_name)).to eq('O')
+     end
+     end
+     
+
+
+ end
 
     
 end
