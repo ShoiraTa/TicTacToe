@@ -37,37 +37,27 @@ end
 puts "#{@player2_name} your symbol  is \"O\""
 puts "#{@player1_name} and #{@player2_name}  get ready to play TicTac Game.."
 
-def user_input_to_i(user_input)
-  user_input.to_i - 1
-end
-
-def current_player(board)
-  count = board.count('X') + board.count('O')
-  count.even? ? @player1_name : @player2_name
-end
-
-def current_symbol(current_player)
-  current_player == @player1_name ? 'X' : 'O'
-end
-
 the_board = Board.new
 game_over = false
+@current_player = @player2_name
 
 until game_over
   display_board(board)
-  current_player = current_player(board)
-  puts " #{current_player} it is your turn now, select your #{current_symbol(current_player(board))} position"
+  @current_player = @player1.current_player(@current_player, @player1_name, @player2_name)
+
+  puts " #{@current_player} it is your turn now, select your #{@player1.current_symbol(@current_player,
+                                                                                       @player1_name)} position"
   player_move = gets.chomp
-  player_move = user_input_to_i(player_move)
+  player_move = @player1.user_input_to_i(player_move)
   if @player1.player_input_valid?(player_move) && the_board.position_valid?(board, player_move)
-    board[player_move] = current_symbol(current_player)
+    board[player_move] = @player1.current_symbol(@current_player, @player1_name)
   else
     p 'Sorry, that is an invalid move kindly choose moves from 1-9'
   end
 
   if the_board.win?(board)
     puts display_board(board)
-    puts "We have a winner! #{current_player} WON the game!!!!"
+    puts "We have a winner! #{@current_player} WON the game!!!!"
   end
 
   puts 'It was a tied game, friendship WINS!!!' if board.none?(Integer)
